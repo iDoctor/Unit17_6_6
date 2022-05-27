@@ -10,10 +10,15 @@
     public double Interest { get; set; }
 }
 
-public static class Calculator
+interface ICalculator
+{
+    void CalculateInterest(Account account);
+}
+
+public class Calculator: ICalculator
 {
     // Метод для расчета процентной ставки
-    public static void CalculateInterest(Account account)
+    public void CalculateInterest(Account account)
     {
         if (account.Type == "Обычный")
         {
